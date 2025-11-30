@@ -63,6 +63,7 @@ const PersonTable: React.FC = () => {
   return (
     <Card
       className="mt-4 rounded-2xl border-none bg-white/90 shadow-2xl backdrop-blur-md"
+      
     >
       <Table<Person>
         rowKey="id"

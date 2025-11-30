@@ -58,9 +58,11 @@ const PersonForm: React.FC = () => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full" 
+     style={{ padding: "5rem" }}>
       <Card
         className="rounded-2xl border-none bg-white/90 shadow-2xl backdrop-blur-md"
+       styles={{body: {padding: "2rem",},}}
         
       >
        <Form
@@ -68,86 +70,54 @@ const PersonForm: React.FC = () => {
   layout="vertical"
   onFinish={onFinish}
   onValuesChange={onValuesChange}
-  className="space-y-2"
+  className="space-y-6"
 >
-  <Row gutter={16}>
-    <Col span={4}>
-      <Form.Item
-        label="คำนำหน้า"
-        name="title"
-        rules={[{ required: true, message: "กรุณาเลือกคำนำหน้า" }]}
-      >
-        <Select placeholder="เลือกคำนำหน้า" size="middle">
-          <Option value="นาย">นาย</Option>
-          <Option value="นาง">นาง</Option>
-          <Option value="นางสาว">นางสาว</Option>
-        </Select>
+
+  <Row gutter={24}>
+    <Col xs={24} md={6}>
+      <Form.Item label="คำนำหน้า" name="title" rules={[{ required: true }]}>
+        <Select placeholder="เลือกคำนำหน้า" />
       </Form.Item>
     </Col>
 
-    <Col span={10}>
-      <Form.Item
-        label="ชื่อจริง"
-        name="firstName"
-        rules={[{ required: true, message: "กรุณากรอกชื่อจริง" }]}
-      >
-        <Input placeholder="กรอกชื่อจริง" className="h-10" />
+    <Col xs={24} md={9}>
+      <Form.Item label="ชื่อจริง" name="firstName" rules={[{ required: true }]}>
+        <Input placeholder="กรอกชื่อจริง" />
       </Form.Item>
     </Col>
 
-    <Col span={10}>
-      <Form.Item
-        label="นามสกุล"
-        name="lastName"
-        rules={[{ required: true, message: "กรุณากรอกนามสกุล" }]}
-      >
-        <Input placeholder="กรอกนามสกุล" className="h-10" />
+    <Col xs={24} md={9}>
+      <Form.Item label="นามสกุล" name="lastName" rules={[{ required: true }]}>
+        <Input placeholder="กรอกนามสกุล" />
       </Form.Item>
     </Col>
   </Row>
 
-  <Row gutter={16}>
-    <Col span={6}>
-      <Form.Item
-        label="วันเกิด"
-        name="birthday"
-        rules={[{ required: true, message: "กรุณาเลือกวันเกิด" }]}
-      >
+  <Row gutter={24}>
+    <Col xs={24} md={6}>
+      <Form.Item label="วันเกิด" name="birthday" rules={[{ required: true }]}>
         <DatePicker style={{ width: "100%" }} />
       </Form.Item>
     </Col>
 
-    <Col span={6}>
-      <Form.Item
-        label="สัญชาติ"
-        name="nationality"
-        rules={[{ required: true, message: "กรุณาเลือกสัญชาติ" }]}
-      >
-        <Select placeholder="เลือกสัญชาติ">
-          <Option value="Thai">ไทย</Option>
-          <Option value="Other">อื่นๆ</Option>
-        </Select>
+    <Col xs={24} md={6}>
+      <Form.Item label="สัญชาติ" name="nationality" rules={[{ required: true }]}>
+        <Select placeholder="เลือกสัญชาติ" />
       </Form.Item>
     </Col>
 
-    <Col span={12}>
-      <Form.Item
-        label="เลขบัตรประชาชน"
-        name="citizenId"
-      >
+    
+  </Row>
+
+  <Col xs={24} md={12}>
+      <Form.Item label="เลขบัตรประชาชน" name="citizenId">
         <Input placeholder="กรอกเลขบัตรประชาชน" />
       </Form.Item>
     </Col>
-  </Row>
-
-  <Row gutter={16}>
-    <Col span={8}>
-      <Form.Item
-        label="เพศ"
-        name="gender"
-        rules={[{ required: true, message: "กรุณาเลือกเพศ" }]}
-      >
-        <Radio.Group className="flex gap-4">
+  
+    <Col xs={24} md={8}>
+      <Form.Item label="เพศ" name="gender" rules={[{ required: true }]}>
+        <Radio.Group className="flex gap-6">
           <Radio value="male">ชาย</Radio>
           <Radio value="female">หญิง</Radio>
           <Radio value="unsex">ไม่ระบุ</Radio>
@@ -155,39 +125,32 @@ const PersonForm: React.FC = () => {
       </Form.Item>
     </Col>
 
-    <Col span={8}>
-      <Form.Item
-        label="เบอร์มือถือ"
-        name="mobile"
-        rules={[{ required: true, message: "กรุณากรอกเบอร์มือถือ" }]}
-      >
+    <Col xs={24} md={8}>
+      <Form.Item label="เบอร์มือถือ" name="mobile" rules={[{ required: true }]}>
         <Input placeholder="กรอกเบอร์มือถือ" />
       </Form.Item>
     </Col>
 
-    <Col span={8}>
-      <Form.Item
-        label="เลขพาสปอร์ต"
-        name="passportNo"
-      >
+    <Col xs={24} md={8}>
+      <Form.Item label="เลขพาสปอร์ต" name="passportNo">
         <Input placeholder="กรอกเลขพาสปอร์ต" />
       </Form.Item>
     </Col>
-  </Row>
+  
 
-  <Row gutter={16}>
-    <Col span={8}>
-      <Form.Item
-        label="เงินเดือนที่คาดหวัง"
-        name="expectedSalary"
-        rules={[{ required: true, message: "กรุณากรอกเงินเดือนที่คาดหวัง" }]}
-      >
-        <InputNumber className="w-full" placeholder="เช่น 30000" />
-      </Form.Item>
-    </Col>
-  </Row>
+  <Row gutter={24}>
+  <Col xs={24} md={12}>
+    <Form.Item
+      label="เงินเดือนที่คาดหวัง"
+      name="expectedSalary"
+      rules={[{ required: true }]}
+    >
+      <InputNumber className="w-full" placeholder="เช่น 30000" />
+    </Form.Item>
+  </Col>
+</Row>
 
-  <Row justify="end" gutter={8} className="pt-2">
+  <Row justify="end" gutter={12}>
     <Col>
       <Button onClick={handleReset}>ล้างฟอร์ม</Button>
     </Col>

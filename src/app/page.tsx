@@ -3,8 +3,8 @@ import PersonTable from "./persontable";
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-gradient-to-r from-green-300 via-lime-200 to-orange-300">
-      <div className="mx-auto flex min-h-screen max-w-6xl flex-col px-6">
+    <main className="min-h-screen">
+      <div className="mx-auto max-w-6xl min-h-screen flex flex-col px-6">
         <header className="flex items-center justify-between py-5">
           <h1 className="text-2xl font-semibold text-white drop-shadow-md">
             Form & Table
@@ -23,8 +23,9 @@ export default function HomePage() {
           </div>
         </header>
 
-        <section className="flex flex-1 items-start justify-center pt-4 pb-10">
-          <div className="w-full space-y-4">
+        <section className="flex flex-1 items-start justify-center pt-4 pb-10 "
+        >
+          <div className="w-full space-y-4" >
             <PersonForm />
             <PersonTable />
           </div>
